@@ -1,6 +1,6 @@
 {
   "name": "keysme",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,20 @@
     "test:watch": "jest --watchAll",
     "npm:publish": "npm publish"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Oaxoa/Keysme"
+  },
+  "Keywords": [
+    "hotkey",
+    "hotkeys",
+    "keyboard",
+    "keyboardevent",
+    "keyboard manager",
+    "keyboard management",
+    "shortcut",
+    "shorthand"
+  ],
   "author": "Pierluigi Pesenti",
   "license": "MIT",
   "devDependencies": {
