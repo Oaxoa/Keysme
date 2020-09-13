@@ -25,7 +25,7 @@ npm install --save keysme
 As a pure function it can be used to perform simple checks 
 against a KeyboardEvent-like object and a hotkey (string):
 
-```Javascript
+```javascript
 // checkHotkey(KeyboardEvent-like, hotkey);
 
 // Example
@@ -67,7 +67,7 @@ deregisterHotkey('Shift-Ctrl-A');
 
 As a hook it works easily with React functional components:
 
-```Javascript
+```javascript
 import {useHotkey} from 'keysme/react';
 
 const Component = props => {
@@ -78,7 +78,7 @@ const Component = props => {
 As a hook it will take care of registering and deregistering for you.
 Internally it will operate something like:
 
-```Javascript
+```javascript
 ...
 useEffect(() => {
     registerHotkey(options.hotkey, option.f);
