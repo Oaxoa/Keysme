@@ -42,19 +42,56 @@ const getParsed = str => {
     return {subject: getSubject(parts), modifiers: getModifiers(parts)};
 };
 
-const shallowEqual=(obj1, obj2) => Object.keys(obj1).length === Object.keys(obj2).length &&
+const shallowEqual = (obj1, obj2) => Object.keys(obj1).length === Object.keys(obj2).length &&
     Object.keys(obj1).every(key => obj1[key] === obj2[key]);
 
 const checkHotkey = (event, hotkey) => {
     const nativeEvent = event.nativeEvent || event;
     const parsed = getParsed(hotkey);
-    const eventModifiers=getModifiersFromEvent(event);
+    const eventModifiers = getModifiersFromEvent(event);
 
     const sameSubject = parsed.subject === exceptionsReplace(nativeEvent.key).toLowerCase();
     const sameModifiers = shallowEqual(parsed.modifiers, eventModifiers);
 
     return sameSubject && sameModifiers;
 };
+
+const getCheckTriggerFunction = (hotkey, f) => e => {
+    if (checkHotkey(e, hotkey)) f();
+};
+
+let registeredHotkeys = [];
+const alreadyRegistered = (hotkey, f) => o => o.hotkey === hotkey && o.f === f;
+
+const getBody = () => document.querySelector('body');
+const registerHotkey = (hotkey, f) => {
+    const wrappedFunction = getCheckTriggerFunction(hotkey, f);
+    if (!registeredHotkeys.find(alreadyRegistered(hotkey, wrappedFunction))) {
+        registeredHotkeys.push({hotkey, f, wrappedFunction});
+
+        getBody().addEventListener('keyup', wrappedFunction);
+    }
+};
+
+const deregisterHotkey = (hotkey, f) => {
+    const b = getBody();
+
+    const existingMatches = f
+        ? registeredHotkeys.filter(o => o.hotkey === hotkey && o.f === f)
+        : registeredHotkeys.filter(o => o.hotkey === hotkey);
+
+    existingMatches.forEach(match => {
+        b.removeEventListener('keyup', match.wrappedFunction);
+    });
+
+    const newRegisteredHotkeys = f
+        ? registeredHotkeys.filter(o => o.hotkey !== hotkey && o.f !== f)
+        : registeredHotkeys.filter(o => o.hotkey !== hotkey)
+    ;
+    registeredHotkeys = newRegisteredHotkeys;
+};
+
+const getRegisteredHotkeys = () => registeredHotkeys;
 
 export {
     isModifier,
@@ -71,4 +108,7 @@ export {
     exceptionsReplace,
     shallowEqual,
     checkHotkey,
+    registerHotkey,
+    deregisterHotkey,
+    getRegisteredHotkeys,
 };

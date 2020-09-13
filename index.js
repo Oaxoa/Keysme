@@ -1,3 +1,3 @@
-import {checkHotkey} from './lib';
+import {checkHotkey, registerHotkey, deregisterHotkey, getRegisteredHotkeys} from './lib';
 
-export {checkHotkey};
+export {checkHotkey, registerHotkey, deregisterHotkey, getRegisteredHotkeys};
