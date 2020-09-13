@@ -1,6 +1,6 @@
 {
   "name": "keysme",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -34,7 +34,7 @@
     "jest": "^26.4.2",
     "react": "^16.13.1"
   },
-  "peerDependencies": {
+  "optionalDependencies": {
     "react": ">=16"
   }
 }
