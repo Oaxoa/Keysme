@@ -6,7 +6,8 @@
   "scripts": {
     "build": "babel src -d lib",
     "test": "jest --coverage",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "npm:publish": "npm publish"
   },
   "author": "Pierluigi Pesenti",
   "license": "MIT",
