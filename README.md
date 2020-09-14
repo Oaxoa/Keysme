@@ -1,10 +1,12 @@
 # KeysMe 😘
 
+[![Coverage Status](https://coveralls.io/repos/github/Oaxoa/Keysme/badge.svg?branch=master)](https://coveralls.io/github/Oaxoa/Keysme?branch=master)
+
 KeysMe is a tiny-tiny (note the double-tiny which makes it tiny * .5) 
 library to handle keyboard interaction and super-complex hotkeys in a line.
 
 - 1Kb gzipped
-- ZERO dependencies
+- ZERO dependencies (optional dependency on [react](https://www.npmjs.com/package/react) to use the _useHotkey_ hook)
 - 100% test coverage
  
 ...by design.

@@ -1,20 +1,22 @@
 {
   "name": "keysme",
   "version": "1.0.5",
-  "description": "",
+  "description": "Easily manage keyboard interactions and complex hotkeys / keyboard shortcuts / shorthands",
   "main": "index.js",
   "scripts": {
     "build": "babel src -d lib",
     "test": "jest --coverage",
     "test:watch": "jest --watchAll",
     "npm:publish": "npm publish",
-    "npm:pack": "npm pack"
+    "npm:pack": "npm pack",
+    "release": "np",
+    "release:preview": "np --preview"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Oaxoa/Keysme"
   },
-  "Keywords": [
+  "keywords": [
     "hotkey",
     "hotkeys",
     "keyboard",
@@ -32,6 +34,7 @@
     "@babel/preset-env": "^7.11.5",
     "babel-jest": "^26.3.0",
     "jest": "^26.4.2",
+    "np": "^6.5.0",
     "react": "^16.13.1"
   },
   "optionalDependencies": {
