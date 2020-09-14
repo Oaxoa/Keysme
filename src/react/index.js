@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
-import {registerHotkey, deregisterHotkey} from "../utils";
+import {useEffect} from 'react';
+import {registerHotkey, deregisterHotkey} from '../utils';
 
-const useHotkey= (hotkey, f, deps) =>{
-    useEffect(() => {
-        registerHotkey(hotkey, f);
-        return () => {
-            deregisterHotkey(hotkey, f);
-        };
-    }, deps);
+const useHotkey = (hotkey, f, deps) => {
+	useEffect(() => {
+		registerHotkey(hotkey, f);
+		return () => {
+			deregisterHotkey(hotkey, f);
+		};
+	}, deps);
 
-    return [];
-}
+	return [];
+};
 
 export {useHotkey};
