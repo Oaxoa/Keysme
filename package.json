@@ -1,6 +1,6 @@
 {
   "name": "keysme",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Easily manage keyboard interactions and complex hotkeys / keyboard shortcuts / shorthands",
   "main": "index.js",
   "scripts": {
