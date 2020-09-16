@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Known Vulnerabilities](https://snyk.io/test/github/Oaxoa/keysme/badge.svg?targetFile=package.json)](https://snyk.io/test/github/dwyl/hapi-auth-jwt2?targetFile=package.json)
+[![Build Status](https://travis-ci.org/Oaxoa/Keysme.svg?branch=master)](https://travis-ci.org/Oaxoa/Keysme)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 KeysMe is a tiny-tiny (note the double-tiny which makes it tiny * .5) 
