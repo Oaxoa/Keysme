@@ -1,6 +1,8 @@
 # KeysMe 😘
 
-[![Coverage Status](https://coveralls.io/repos/github/Oaxoa/Keysme/badge.svg?branch=master)](https://coveralls.io/github/Oaxoa/Keysme?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Known Vulnerabilities](https://snyk.io/test/github/Oaxoa/keysme/badge.svg?targetFile=package.json)](https://snyk.io/test/github/dwyl/hapi-auth-jwt2?targetFile=package.json)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 KeysMe is a tiny-tiny (note the double-tiny which makes it tiny * .5) 
 library to handle keyboard interaction and super-complex hotkeys in a line.
@@ -81,14 +83,14 @@ As a hook it will take care of registering and deregistering for you.
 Internally it will operate something like:
 
 ```javascript
-...
+// ...
 useEffect(() => {
     registerHotkey(options.hotkey, option.f);
     return () => {
         deregisterHotkey(options.hotkey, options.f)
     };
 }, options.deps);
-...
+// ...
 ```
 
 Please fork and contribute.
