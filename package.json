@@ -7,7 +7,6 @@
     "build": "babel src -d lib",
     "test": "jest --coverage",
     "test:watch": "jest --watchAll",
-    "npm:publish": "npm publish",
     "npm:pack": "npm pack",
     "release": "np",
     "release:preview": "np --preview"
